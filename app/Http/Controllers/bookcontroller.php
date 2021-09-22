@@ -4,17 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\DB;
 use App\Models\booksModel;
 
 class bookcontroller extends Controller
 {
     function getBooks(){
-        $users = DB::table('books')->get();
         return response()->json([
             'success'=>true,
-            
-            'data'=>$users
+            'data'=>booksModel::all()
         ]);
         
     }
