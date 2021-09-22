@@ -28,7 +28,7 @@ class bookcontroller extends Controller
                 $extention = $file->getClientOriginalExtension();
                 $filename = time().'.'.$extention;
                 $file->move('images',$filename);
-                $books->imgRes="http://192.168.0.101:8000/"."images/".$filename;
+                $books->imgRes="images/".$filename;
             }
             if($req->hasfile("pdfRes"))
         {
@@ -36,7 +36,7 @@ class bookcontroller extends Controller
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'.$extention;
             $file->move('pdfs',$filename);
-            $books->pdfRes="http://192.168.0.101:8000/"."pdfs/".$filename;
+            $books->pdfRes="pdfs/".$filename;
         }
             $books->save();
             return view("/uploadbooks");
