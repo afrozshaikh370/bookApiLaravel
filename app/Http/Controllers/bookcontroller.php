@@ -28,7 +28,7 @@ class bookcontroller extends Controller
                 $extention = $file->getClientOriginalExtension();
                 $filename = time().'.'.$extention;
                 $file->move('images',$filename);
-                $books->imgRes="images/".$filename;
+                $books->imgRes="https://bookapp789.herokuapp.com/"."images/".$filename;
             }
             if($req->hasfile("pdfRes"))
         {
@@ -36,7 +36,7 @@ class bookcontroller extends Controller
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'.$extention;
             $file->move('pdfs',$filename);
-            $books->pdfRes="pdfs/".$filename;
+            $books->pdfRes="https://bookapp789.herokuapp.com/"."pdfs/".$filename;
         }
             $books->save();
             return view("/uploadbooks");
