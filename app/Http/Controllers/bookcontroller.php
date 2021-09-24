@@ -25,6 +25,15 @@ class bookcontroller extends Controller
         
     }
 
+    function getBooksFromEmail($email){
+       
+        return response()->json([  
+            'success'=>true,
+            'data'=>DB::select('select * from books where email = :email',['email'=>$email])
+        ]);
+        
+    }
+
     public function uploadBooks(Request $req){
 
         $books = new booksModel;

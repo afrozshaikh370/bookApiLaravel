@@ -25,6 +25,7 @@ Route::get('/uploadbooks', function () {
 
 Route::get('/getbooksfromcate/{category}', [bookcontroller::class,'getBooksFromCategory']);
 
+Route::get('/getbooksfromemail/{email}', [bookcontroller::class,'getBooksFromCategory']);
 
 Route::get('/getbooks',[bookcontroller::class,'getBooks'] );
 
