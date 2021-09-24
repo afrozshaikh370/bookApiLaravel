@@ -23,6 +23,8 @@ Route::get('/uploadbooks', function () {
     return view('uploadbooks');
 });
 
+Route::get('/getbooksfromcate/{category}', [bookcontroller::class,'getBooksFromCategory']);
+
 
 Route::get('/getbooks',[bookcontroller::class,'getBooks'] );
 
